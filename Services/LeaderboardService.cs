@@ -27,5 +27,14 @@ namespace Challenge2.Services
             return leaderboard;
         }
 
+        public LeaderboardModel getLeaderboardModel()
+        {
+            LeaderboardModel model = new LeaderboardModel();
+            model.LeaderboardEntries.Add(new Entry("Allan", 0, 1));
+            model.page = 1;
+            model.count = model.LeaderboardEntries.Count;
+
+            return model; 
+        }
     }
 }

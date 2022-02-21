@@ -7,5 +7,6 @@ namespace Challenge2.Interfaces
     {
         public Entry getEntry();
         public List<Entry> getLeaderboard();
+        public LeaderboardModel getLeaderboardModel();
     }
 }

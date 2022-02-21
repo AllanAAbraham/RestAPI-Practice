@@ -1,0 +1,502 @@
+[
+	{
+		"username": "Selma",
+		"score": 7318,
+		"index": 3909
+	},
+	{
+		"username": "Orson",
+		"score": 80,
+		"index": 8345
+	},
+	{
+		"username": "Whoopi",
+		"score": 9540,
+		"index": 5458
+	},
+	{
+		"username": "Edward",
+		"score": 3050,
+		"index": 8170
+	},
+	{
+		"username": "Kareem",
+		"score": 3958,
+		"index": 8169
+	},
+	{
+		"username": "Griffin",
+		"score": 737,
+		"index": 8419
+	},
+	{
+		"username": "Georgia",
+		"score": 7451,
+		"index": 2938
+	},
+	{
+		"username": "Amaya",
+		"score": 885,
+		"index": 1531
+	},
+	{
+		"username": "Isaac",
+		"score": 4674,
+		"index": 8298
+	},
+	{
+		"username": "Maggy",
+		"score": 4866,
+		"index": 9620
+	},
+	{
+		"username": "Ifeoma",
+		"score": 7937,
+		"index": 2223
+	},
+	{
+		"username": "Dean",
+		"score": 562,
+		"index": 8467
+	},
+	{
+		"username": "Kaseem",
+		"score": 9128,
+		"index": 2683
+	},
+	{
+		"username": "Plato",
+		"score": 9313,
+		"index": 7293
+	},
+	{
+		"username": "Christopher",
+		"score": 2278,
+		"index": 7534
+	},
+	{
+		"username": "Jana",
+		"score": 9706,
+		"index": 7753
+	},
+	{
+		"username": "Vivian",
+		"score": 2955,
+		"index": 387
+	},
+	{
+		"username": "Maxine",
+		"score": 1029,
+		"index": 1203
+	},
+	{
+		"username": "Hedley",
+		"score": 4307,
+		"index": 927
+	},
+	{
+		"username": "Haley",
+		"score": 6474,
+		"index": 257
+	},
+	{
+		"username": "Ali",
+		"score": 3005,
+		"index": 3171
+	},
+	{
+		"username": "Gil",
+		"score": 2198,
+		"index": 3012
+	},
+	{
+		"username": "Garrett",
+		"score": 3784,
+		"index": 1778
+	},
+	{
+		"username": "Drew",
+		"score": 5963,
+		"index": 8538
+	},
+	{
+		"username": "Belle",
+		"score": 5121,
+		"index": 4833
+	},
+	{
+		"username": "Destiny",
+		"score": 7853,
+		"index": 9888
+	},
+	{
+		"username": "Travis",
+		"score": 4825,
+		"index": 7242
+	},
+	{
+		"username": "Zeus",
+		"score": 1449,
+		"index": 4916
+	},
+	{
+		"username": "Colorado",
+		"score": 9861,
+		"index": 6075
+	},
+	{
+		"username": "Amelia",
+		"score": 7904,
+		"index": 4595
+	},
+	{
+		"username": "Breanna",
+		"score": 8015,
+		"index": 1849
+	},
+	{
+		"username": "Urielle",
+		"score": 3158,
+		"index": 2144
+	},
+	{
+		"username": "Travis",
+		"score": 8368,
+		"index": 3215
+	},
+	{
+		"username": "Caesar",
+		"score": 3459,
+		"index": 9498
+	},
+	{
+		"username": "Serena",
+		"score": 6676,
+		"index": 4948
+	},
+	{
+		"username": "Emmanuel",
+		"score": 2447,
+		"index": 8881
+	},
+	{
+		"username": "Gisela",
+		"score": 2210,
+		"index": 5389
+	},
+	{
+		"username": "Edward",
+		"score": 4818,
+		"index": 2456
+	},
+	{
+		"username": "Vance",
+		"score": 4684,
+		"index": 2465
+	},
+	{
+		"username": "Charles",
+		"score": 3415,
+		"index": 1585
+	},
+	{
+		"username": "Hasad",
+		"score": 1190,
+		"index": 2762
+	},
+	{
+		"username": "Blythe",
+		"score": 7477,
+		"index": 5220
+	},
+	{
+		"username": "Kato",
+		"score": 6966,
+		"index": 7758
+	},
+	{
+		"username": "Francesca",
+		"score": 2751,
+		"index": 8665
+	},
+	{
+		"username": "Brittany",
+		"score": 9297,
+		"index": 6577
+	},
+	{
+		"username": "Brent",
+		"score": 690,
+		"index": 1549
+	},
+	{
+		"username": "Donna",
+		"score": 9120,
+		"index": 843
+	},
+	{
+		"username": "Magee",
+		"score": 1727,
+		"index": 9330
+	},
+	{
+		"username": "Kelly",
+		"score": 9996,
+		"index": 6869
+	},
+	{
+		"username": "Justine",
+		"score": 5089,
+		"index": 4183
+	},
+	{
+		"username": "Evan",
+		"score": 3576,
+		"index": 6941
+	},
+	{
+		"username": "Eric",
+		"score": 4936,
+		"index": 4479
+	},
+	{
+		"username": "Raphael",
+		"score": 5476,
+		"index": 5050
+	},
+	{
+		"username": "Kelsey",
+		"score": 3758,
+		"index": 3505
+	},
+	{
+		"username": "Breanna",
+		"score": 5806,
+		"index": 8477
+	},
+	{
+		"username": "Arsenio",
+		"score": 9910,
+		"index": 5872
+	},
+	{
+		"username": "Yolanda",
+		"score": 4767,
+		"index": 803
+	},
+	{
+		"username": "Ferris",
+		"score": 2223,
+		"index": 7853
+	},
+	{
+		"username": "Forrest",
+		"score": 294,
+		"index": 6441
+	},
+	{
+		"username": "Signe",
+		"score": 7039,
+		"index": 6508
+	},
+	{
+		"username": "Liberty",
+		"score": 4,
+		"index": 8767
+	},
+	{
+		"username": "Elliott",
+		"score": 2903,
+		"index": 6971
+	},
+	{
+		"username": "Calvin",
+		"score": 6629,
+		"index": 7870
+	},
+	{
+		"username": "Miriam",
+		"score": 6675,
+		"index": 4528
+	},
+	{
+		"username": "Gray",
+		"score": 2082,
+		"index": 7409
+	},
+	{
+		"username": "Cairo",
+		"score": 2025,
+		"index": 2511
+	},
+	{
+		"username": "Cleo",
+		"score": 2445,
+		"index": 9830
+	},
+	{
+		"username": "Jaime",
+		"score": 3185,
+		"index": 9963
+	},
+	{
+		"username": "Moses",
+		"score": 7005,
+		"index": 8
+	},
+	{
+		"username": "Cally",
+		"score": 6054,
+		"index": 7633
+	},
+	{
+		"username": "Reece",
+		"score": 2157,
+		"index": 9260
+	},
+	{
+		"username": "Baxter",
+		"score": 3802,
+		"index": 2529
+	},
+	{
+		"username": "Magee",
+		"score": 4045,
+		"index": 4633
+	},
+	{
+		"username": "Oprah",
+		"score": 7644,
+		"index": 3711
+	},
+	{
+		"username": "Murphy",
+		"score": 2594,
+		"index": 8102
+	},
+	{
+		"username": "Jonah",
+		"score": 8119,
+		"index": 8227
+	},
+	{
+		"username": "Vladimir",
+		"score": 4832,
+		"index": 5870
+	},
+	{
+		"username": "Nehru",
+		"score": 7678,
+		"index": 9656
+	},
+	{
+		"username": "Armando",
+		"score": 2017,
+		"index": 8501
+	},
+	{
+		"username": "Ava",
+		"score": 2833,
+		"index": 9318
+	},
+	{
+		"username": "Gemma",
+		"score": 9074,
+		"index": 3758
+	},
+	{
+		"username": "Keith",
+		"score": 5888,
+		"index": 2492
+	},
+	{
+		"username": "Sacha",
+		"score": 8098,
+		"index": 1786
+	},
+	{
+		"username": "Jin",
+		"score": 3824,
+		"index": 5263
+	},
+	{
+		"username": "Jesse",
+		"score": 9718,
+		"index": 2838
+	},
+	{
+		"username": "Kaitlin",
+		"score": 6847,
+		"index": 7566
+	},
+	{
+		"username": "Mara",
+		"score": 1643,
+		"index": 7328
+	},
+	{
+		"username": "Abbot",
+		"score": 4983,
+		"index": 8156
+	},
+	{
+		"username": "Fatima",
+		"score": 1971,
+		"index": 720
+	},
+	{
+		"username": "Zena",
+		"score": 9659,
+		"index": 8198
+	},
+	{
+		"username": "Keaton",
+		"score": 5719,
+		"index": 2311
+	},
+	{
+		"username": "Bert",
+		"score": 7382,
+		"index": 2765
+	},
+	{
+		"username": "Amy",
+		"score": 9907,
+		"index": 8563
+	},
+	{
+		"username": "Vaughan",
+		"score": 4038,
+		"index": 518
+	},
+	{
+		"username": "Stuart",
+		"score": 7505,
+		"index": 779
+	},
+	{
+		"username": "Ezekiel",
+		"score": 7358,
+		"index": 8194
+	},
+	{
+		"username": "Caryn",
+		"score": 5096,
+		"index": 3023
+	},
+	{
+		"username": "Evangeline",
+		"score": 8914,
+		"index": 4653
+	},
+	{
+		"username": "Nicholas",
+		"score": 6300,
+		"index": 5721
+	},
+	{
+		"username": "Katelyn",
+		"score": 6328,
+		"index": 1793
+	}
+]
