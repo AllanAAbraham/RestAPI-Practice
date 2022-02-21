@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Challenge2.Interfaces;
 using Challenge2.Models;
+using System.Collections.Generic;
+
 
 namespace Challenge2.Controllers
 {
@@ -11,16 +13,24 @@ namespace Challenge2.Controllers
 
         //private readonly ILogger<LeaderboardController> _logger;
         private ILeaderboardService _Leaderboard;
+
         public LeaderboardController(ILeaderboardService Leaderboard)
         {
             _Leaderboard = Leaderboard;
         }
 
         [HttpGet] //GET
-        public Entry getLboard()
+        //public Entry getEntry()
+        //{
+        //    return _Leaderboard.getEntry();
+//        }
+
+        [HttpGet] //GET
+        public List<Entry> getLeaderboard()
         {
             return _Leaderboard.getLeaderboard();
         }
-        
+
+
     }
 }
