@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Challenge2.Interfaces;
+using Challenge2.Models;
 
 namespace Challenge2.Controllers
 {
@@ -16,7 +17,7 @@ namespace Challenge2.Controllers
         }
 
         [HttpGet] //GET
-        public string getLboard()
+        public Entry getLboard()
         {
             return _Leaderboard.getLeaderboard();
         }

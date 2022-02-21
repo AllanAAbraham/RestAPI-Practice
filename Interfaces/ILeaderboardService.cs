@@ -1,7 +1,9 @@
-﻿namespace Challenge2.Interfaces
+﻿using Challenge2.Models;
+
+namespace Challenge2.Interfaces
 {
     public interface ILeaderboardService
     {
-        public string getLeaderboard();
+        public Entry getLeaderboard();
     }
 }
