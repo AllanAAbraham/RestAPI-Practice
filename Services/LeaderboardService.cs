@@ -1,12 +1,14 @@
 ﻿using Challenge2.Interfaces;
 using Challenge2.Models;
-using System.Collections.Generic;
+
 
 
 namespace Challenge2.Services
 {
+    
     public class LeaderboardService : ILeaderboardService
     {
+        public static LeaderboardModel model = new LeaderboardModel();
         public Entry getEntry()
         {
             Entry entry1 = new Entry("test", 1, 1);
@@ -15,6 +17,12 @@ namespace Challenge2.Services
            // entry1.index = 1;
 
             return entry1; 
+        }
+
+        public string addEntry(Entry e)
+        {
+            model.LeaderboardEntries.Add(e);    
+            return "successs";
         }
 
         public List<Entry> getLeaderboard()
@@ -29,11 +37,11 @@ namespace Challenge2.Services
 
         public LeaderboardModel getLeaderboardModel()
         {
-            LeaderboardModel model = new LeaderboardModel();
-            model.LeaderboardEntries.Add(new Entry("Allan", 0, 1));
-            model.LeaderboardEntries.Add(new Entry("Joshua", 1, 2));
-            model.LeaderboardEntries.Add(new Entry("Nick", 2, 3));
-            model.page = 1;
+            
+            //model.LeaderboardEntries.Add(new Entry("Allan", 0, 1));
+           // model.LeaderboardEntries.Add(new Entry("Joshua", 1, 2));
+           // model.LeaderboardEntries.Add(new Entry("Nick", 2, 3));
+            //model.page = 1;
             model.count = model.LeaderboardEntries.Count;
 
             return model; 

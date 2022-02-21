@@ -19,6 +19,13 @@ namespace Challenge2.Controllers
             _Leaderboard = Leaderboard;
         }
 
+        [HttpPost] // Post
+        public string addEntry(Entry e)//string username, int score, int index)
+        {
+           // Entry e = new Entry(username, index, score);
+            return _Leaderboard.addEntry(e);
+        }
+
         //[HttpGet] GET
         //public Entry getEntry()
         //{

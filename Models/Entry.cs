@@ -6,11 +6,11 @@
         public int index { get; set; }
         public int score { get; set; }
 
-        public Entry(string un, int ind, int sre)
+        public Entry(string username, int index, int score)
         {
-            username = un;
-            index = ind;
-            score = sre;
+            this.username = username;
+            this.index = index;
+            this.score = score;
         }
     }
 }
