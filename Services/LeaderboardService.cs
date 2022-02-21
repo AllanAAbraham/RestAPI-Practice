@@ -31,6 +31,8 @@ namespace Challenge2.Services
         {
             LeaderboardModel model = new LeaderboardModel();
             model.LeaderboardEntries.Add(new Entry("Allan", 0, 1));
+            model.LeaderboardEntries.Add(new Entry("Joshua", 1, 2));
+            model.LeaderboardEntries.Add(new Entry("Nick", 2, 3));
             model.page = 1;
             model.count = model.LeaderboardEntries.Count;
 

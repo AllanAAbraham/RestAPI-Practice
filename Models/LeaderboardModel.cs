@@ -6,7 +6,7 @@ namespace Challenge2.Models
     {
         
         public List<Entry>? LeaderboardEntries { get; set; }
-        public int CurrentPageIndex { get; set; }
+        private int CurrentPageIndex { get; set; }
         public int page { get; set; }
         public int count { get; set; }
 
