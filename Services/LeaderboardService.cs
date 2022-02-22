@@ -10,6 +10,8 @@ namespace Challenge2.Services
         public static LeaderboardModel model = new LeaderboardModel();
         private readonly IConfiguration _config;        //Used for accessing config file for datafile path
         private readonly IWebHostEnvironment _hostingEnvironment; //Used for building API file path
+        // var redis = RedisStore.RedisCache {setting up redis cache}
+        // RedisKey RedisLeaderboard = "LeaderboardKey" {setting up leaderboard key}
 
         public LeaderboardService(IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
@@ -22,6 +24,7 @@ namespace Challenge2.Services
             for(int i = 0; i < e.Count; i++)
             {
                 model.LeaderboardEntries.Add(e[i]); 
+                //redis.SortedSetAdd(RedisLeaderboard, e[i], e[i].score); Adding entries into the cache of redis
             }
             return true;
         }
@@ -43,7 +46,13 @@ namespace Challenge2.Services
             {
                 n = model.LeaderboardEntries.Count; //this makes sure that the api only current displays entries that are available 
             }
+
+            //var EntriesByScore = redis.SortedSetRangeByScore(LeaderboardKey, 1, model.LeaderboardEntries.Count, Exclude.None, Order.Descending); // This should return a list of all entries that is ordered from highest to lowest score
+            
             LeaderboardModel page = new LeaderboardModel(); //creating a subset of model to be returned to controller
+
+            //page.LeaderboardEntries = EntriesByScore.GetRange((pageNum - 1) * n, Math.Min(n, model.LeaderboardEntries.Count - ((pageNum - 1) * n)));
+            //This should add the subset (determined by pageNum and n) of the the List of sorted entries 
 
             //Adds a subset of entries based on optional querystring parameters. 
             //The first value (pageNum - 1) * n) calculates the offset of the model file (how many entries are skipped first)

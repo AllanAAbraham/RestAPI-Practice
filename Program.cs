@@ -10,6 +10,12 @@ builder.Services.AddEndpointsApiExplorer();
 // Add dependency injection
 builder.Services.AddScoped<ILeaderboardService, LeaderboardService>();
 
+/*  Configuring redis server localhost port number
+    builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "localhost:4455";
+});
+*/
 var app = builder.Build();
 
 app.UseHttpsRedirection();

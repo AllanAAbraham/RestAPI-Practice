@@ -74,9 +74,10 @@ Goals for 2 / 21 / 2022
 - Todo: cleanup dead code, comments, change variables, look into Redis implementation
 
 Goals for 2 / 22 / 2022
-- Refactor code 
-- Add comments
-- Add functionality to read json file if LeaderboardModel has no entries
-- Add setting for data filepath
+- Refactor code Y
+- Add comments & fill out readme Y
+- Add functionality to read json file if LeaderboardModel has no entries Y
+- Add setting for data filepath Y
 - Learn redis + add redis comments
+- Start unit testing 
 */
