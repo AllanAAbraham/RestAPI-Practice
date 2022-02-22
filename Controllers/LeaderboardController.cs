@@ -9,21 +9,18 @@ namespace Challenge2.Controllers
     public class LeaderboardController : ControllerBase
     {
 
-        private readonly IWebHostEnvironment _hostingEnvironment;
         private ILeaderboardService _Leaderboard;
         private readonly IConfiguration _config;
-
+        
         public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _Leaderboard = Leaderboard;
             _config = config;
-            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpPost] // Post
-        public IActionResult addEntry([FromBody] List<Entry> ent)//string username, int score, int index)
+        public IActionResult addEntry([FromBody] List<Entry> ent)
         {
-            
             try
             {
                return Ok(_Leaderboard.addEntries(ent));
@@ -35,7 +32,7 @@ namespace Challenge2.Controllers
         }
         
         [HttpGet] //GET
-        public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1, int data = 0)
+        public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1) 
         {
             try
             {
@@ -47,14 +44,7 @@ namespace Challenge2.Controllers
                 {
                     pageNum = 1;
                 }
-                if (data != 1 || data != 0)
-                {
-                    data = 1;
-                }
-                
-                string contentRootPath = _hostingEnvironment.ContentRootPath + _config["Datapath"];
-
-                return Ok(_Leaderboard.getLeaderboardModel(pageNum, n, contentRootPath, data));
+                return Ok(_Leaderboard.getLeaderboardModel(pageNum, n)); 
             }
             catch (Exception)
             {
@@ -86,6 +76,7 @@ Goals for 2 / 21 / 2022
 Goals for 2 / 22 / 2022
 - Refactor code 
 - Add comments
-- Add functionality to read json file
+- Add functionality to read json file if LeaderboardModel has no entries
+- Add setting for data filepath
 - Learn redis + add redis comments
 */

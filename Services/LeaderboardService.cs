@@ -8,7 +8,15 @@ namespace Challenge2.Services
     public class LeaderboardService : ILeaderboardService
     {
         public static LeaderboardModel model = new LeaderboardModel();
-        
+        private readonly IConfiguration _config;
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
+        public LeaderboardService(IConfiguration config, IWebHostEnvironment hostingEnvironment)
+        {
+            _config = config;
+            _hostingEnvironment = hostingEnvironment;
+        }
+
         public Boolean addEntries(List<Entry> e)
         {
             for(int i = 0; i < e.Count; i++)
@@ -18,15 +26,21 @@ namespace Challenge2.Services
             return true;
         }
 
-        public LeaderboardModel getLeaderboardModel(int pageNum, int n, string data, int ydata)
+        public LeaderboardModel getLeaderboardModel(int pageNum, int n) // string data, int ydata)
         {
-            if (ydata == 1 || model == null)
+            if (model.LeaderboardEntries.Count == 0)
             {
-                List<Entry> ent = JsonConvert.DeserializeObject<List<Entry>>(File.ReadAllText(data));
+                string contentRootPath = _hostingEnvironment.ContentRootPath + _config["Datapath"];
+                List<Entry> ent = JsonConvert.DeserializeObject<List<Entry>>(File.ReadAllText(contentRootPath));
+               
                 if (!addEntries(ent))
                 {
                     throw new InvalidOperationException("Data File could not be read");
                 }
+            }
+            if(model.LeaderboardEntries.Count < n)
+            {
+                n = model.LeaderboardEntries.Count; 
             }
             LeaderboardModel page = new LeaderboardModel();
             page.LeaderboardEntries = model.LeaderboardEntries.GetRange((pageNum - 1) * n, n);

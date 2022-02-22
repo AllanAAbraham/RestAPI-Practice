@@ -6,6 +6,6 @@ namespace Challenge2.Interfaces
     public interface ILeaderboardService
     {
         public Boolean addEntries(List<Entry> e);
-        public LeaderboardModel getLeaderboardModel(int pageNum, int n, string data, int ydata);
+        public LeaderboardModel getLeaderboardModel(int pageNum, int n);//, string data, int ydata);
     }
 }
