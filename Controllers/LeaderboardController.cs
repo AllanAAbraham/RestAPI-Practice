@@ -10,7 +10,7 @@ namespace Challenge2.Controllers
     {
 
         private ILeaderboardService _Leaderboard;
-        private readonly IConfiguration _config;
+        private readonly IConfiguration _config;    //used to access config setting for n entries
         
         public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
@@ -18,12 +18,12 @@ namespace Challenge2.Controllers
             _config = config;
         }
 
-        [HttpPost] // Post
+        [HttpPost] // POST if a user wants to add entries themselves
         public IActionResult addEntry([FromBody] List<Entry> ent)
         {
             try
             {
-               return Ok(_Leaderboard.addEntries(ent));
+               return Ok(_Leaderboard.addEntries(ent)); 
             }
               catch (Exception)
             {
@@ -31,16 +31,16 @@ namespace Challenge2.Controllers
             }
         }
         
-        [HttpGet] //GET
+        [HttpGet] //GET paginated results of leaderboard. Page Number defaults to 1st page, n entries defaults to -1 which can be overriden by setting
         public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1) 
         {
             try
             {
-                if (n < 1)
+                if (n < 1)  // if user inputs negative number or no number for the optional query parameter, read default setting listed in appsettings.json
                 {
-                    n = Int32.Parse(_config["NEntries"]);
+                    n = Int32.Parse(_config["NEntries"]);   //Converts string to int of the setting NEntries
                 }
-                if (pageNum < 1)
+                if (pageNum < 1) // if user inputs negative number or 0, API will default to first page
                 {
                     pageNum = 1;
                 }

@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+// Add dependency injection
 builder.Services.AddScoped<ILeaderboardService, LeaderboardService>();
 
 var app = builder.Build();
