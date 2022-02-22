@@ -9,21 +9,24 @@ namespace Challenge2.Controllers
     public class LeaderboardController : ControllerBase
     {
 
+        private readonly IWebHostEnvironment _hostingEnvironment;
         private ILeaderboardService _Leaderboard;
         private readonly IConfiguration _config;
 
-        public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config)
+        public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _Leaderboard = Leaderboard;
             _config = config;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpPost] // Post
         public IActionResult addEntry([FromBody] List<Entry> ent)//string username, int score, int index)
         {
+            
             try
             {
-                return Ok(_Leaderboard.addEntries(ent));
+               return Ok(_Leaderboard.addEntries(ent));
             }
               catch (Exception)
             {
@@ -32,16 +35,26 @@ namespace Challenge2.Controllers
         }
         
         [HttpGet] //GET
-        public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1)
+        public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1, int data = 0)
         {
             try
             {
                 if (n < 1)
+                {
                     n = Int32.Parse(_config["NEntries"]);
+                }
                 if (pageNum < 1)
+                {
                     pageNum = 1;
+                }
+                if (data != 1 || data != 0)
+                {
+                    data = 1;
+                }
                 
-                return Ok(_Leaderboard.getLeaderboardModel(pageNum, n));
+                string contentRootPath = _hostingEnvironment.ContentRootPath + _config["Datapath"];
+
+                return Ok(_Leaderboard.getLeaderboardModel(pageNum, n, contentRootPath, data));
             }
             catch (Exception)
             {
@@ -69,4 +82,10 @@ Goals for 2 / 21 / 2022
 - Completed Pagination : https://localhost:7118/api/leaderboard?pageNum=1&n=2 Y
 
 - Todo: cleanup dead code, comments, change variables, look into Redis implementation
+
+Goals for 2 / 22 / 2022
+- Refactor code 
+- Add comments
+- Add functionality to read json file
+- Learn redis + add redis comments
 */
