@@ -7,7 +7,8 @@ namespace Challenge2.Interfaces
     {
         public Entry getEntry();
         public string addEntry(Entry e);
+        public Boolean addEntries(List<Entry> e);
         public List<Entry> getLeaderboard();
-        public LeaderboardModel getLeaderboardModel();
+        public LeaderboardModel getLeaderboardModel(int pageNum, int n);
     }
 }

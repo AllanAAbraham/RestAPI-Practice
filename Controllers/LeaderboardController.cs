@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Challenge2.Interfaces;
 using Challenge2.Models;
-using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 
 namespace Challenge2.Controllers
@@ -13,45 +13,90 @@ namespace Challenge2.Controllers
 
         //private readonly ILogger<LeaderboardController> _logger;
         private ILeaderboardService _Leaderboard;
+        private readonly IConfiguration _config;
 
-        public LeaderboardController(ILeaderboardService Leaderboard)
+        public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config)
         {
             _Leaderboard = Leaderboard;
+            _config = config;
         }
 
-        [HttpPost] // Post
-        public string addEntry(Entry e)//string username, int score, int index)
+        /*[HttpPost] // Post
+        public string addEntry(Entry ent)//string username, int score, int index)
         {
-           // Entry e = new Entry(username, index, score);
-            return _Leaderboard.addEntry(e);
+            try
+            {
+                return _Leaderboard.addEntry(ent);
+           }
+            catch (Exception)
+            {
+               return "Error creating new Entry record";
+            }
+        }*/
+
+        [HttpPost] // Post
+        public IActionResult addEntry([FromBody] List<Entry> ent)//string username, int score, int index)
+        {
+            try
+            {
+                return Ok(_Leaderboard.addEntries(ent));
+            }
+              catch (Exception)
+            {
+                  return BadRequest();
+            }
         }
+        // Entry e = new Entry(username, index, score);
+
 
         //[HttpGet] GET
         //public Entry getEntry()
         //{
         //    return _Leaderboard.getEntry();
-//        }
+        //        }
 
-       /* [HttpGet] //GET
-        public List<Entry> getLeaderboard()
-        {
-            return _Leaderboard.getLeaderboard();
-        }*/
+        /* [HttpGet] //GET
+         public List<Entry> getLeaderboard()
+         {
+             return _Leaderboard.getLeaderboard();
+         }*/
 
         [HttpGet] //GET
-        public LeaderboardModel getLeaderboardModel()
+        public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1)
         {
-            return _Leaderboard.getLeaderboardModel();
+            try
+            {
+                if (n == -1)
+                    n = Int32.Parse(_config["NEntries"]);
+                
+                return Ok(_Leaderboard.getLeaderboardModel(pageNum, n));
+                //int n =Int32.Parse(_config["NEntries"]);
+                //return Ok(n);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
         }
     }
 }
 
-/*
-Goals for 2 / 21 / 2022
-- Send 1 entry object { username, score, index}
-&store it
-- Retrieve it with get function
-- Send multiple entries into a list 
-- Retrieve entire list 
 
+/* Goals for 2 / 20 / 2022
+- Setup WebAPI Y
+- Controller and Model Class Y
+- Get methods Y
+- Set up dependency Injection Y
+
+Goals for 2 / 21 / 2022
+- Send 1 entry object { username, score, index} Y
+&store it
+- Retrieve it with get function Y
+- Send multiple entries into a list Y 
+- Retrieve entire list Y
+- Begin Pagination Y
+- Number of entries defined in appsettings.json Y
+- Completed Pagination : https://localhost:7118/api/leaderboard?pageNum=1&n=2 Y
+
+- Todo: cleanup dead code, comments, change variables, look into Redis implementation
 */
