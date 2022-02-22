@@ -1,8 +1,7 @@
 # Microsoft Flipgrid Coding Challenge
 ### Allan Abraham
 
-This project was created using Visual Studio
-Code was tested with Postman
+This project was created using Visual Studio and was tested with Postman
 
 ### To run code:
 1. Pull from master branch in github
