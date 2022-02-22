@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Challenge2.Interfaces;
 using Challenge2.Models;
-using Microsoft.Extensions.Configuration;
-
 
 namespace Challenge2.Controllers
 {
@@ -11,7 +9,6 @@ namespace Challenge2.Controllers
     public class LeaderboardController : ControllerBase
     {
 
-        //private readonly ILogger<LeaderboardController> _logger;
         private ILeaderboardService _Leaderboard;
         private readonly IConfiguration _config;
 
@@ -20,19 +17,6 @@ namespace Challenge2.Controllers
             _Leaderboard = Leaderboard;
             _config = config;
         }
-
-        /*[HttpPost] // Post
-        public string addEntry(Entry ent)//string username, int score, int index)
-        {
-            try
-            {
-                return _Leaderboard.addEntry(ent);
-           }
-            catch (Exception)
-            {
-               return "Error creating new Entry record";
-            }
-        }*/
 
         [HttpPost] // Post
         public IActionResult addEntry([FromBody] List<Entry> ent)//string username, int score, int index)
@@ -46,32 +30,18 @@ namespace Challenge2.Controllers
                   return BadRequest();
             }
         }
-        // Entry e = new Entry(username, index, score);
-
-
-        //[HttpGet] GET
-        //public Entry getEntry()
-        //{
-        //    return _Leaderboard.getEntry();
-        //        }
-
-        /* [HttpGet] //GET
-         public List<Entry> getLeaderboard()
-         {
-             return _Leaderboard.getLeaderboard();
-         }*/
-
+        
         [HttpGet] //GET
         public IActionResult getLeaderboardModel(int pageNum = 1, int n = -1)
         {
             try
             {
-                if (n == -1)
+                if (n < 1)
                     n = Int32.Parse(_config["NEntries"]);
+                if (pageNum < 1)
+                    pageNum = 1;
                 
                 return Ok(_Leaderboard.getLeaderboardModel(pageNum, n));
-                //int n =Int32.Parse(_config["NEntries"]);
-                //return Ok(n);
             }
             catch (Exception)
             {
