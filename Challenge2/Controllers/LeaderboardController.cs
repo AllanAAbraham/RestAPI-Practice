@@ -23,7 +23,8 @@ namespace Challenge2.Controllers
         {
             try
             {
-               return Ok(_Leaderboard.addEntries(ent)); 
+                _Leaderboard.addEntries(ent);
+               return Ok("Entry Added"); 
             }
             //catch error message and send 400 Bad Request and display error message
               catch (Exception e)
@@ -82,4 +83,8 @@ Goals for 2 / 22 / 2022
 - Add setting for data filepath Y
 - Learn redis + add redis comments Y
 - Start unit testing 
+
+Goals for 2 / 23 / 2022
+- Finish Unit Testing
+- Add more error handling
 */

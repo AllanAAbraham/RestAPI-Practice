@@ -12,6 +12,8 @@ namespace Challenge2.Services
         private readonly IWebHostEnvironment _hostingEnvironment; //Used for building API file path
         // var redis = RedisStore.RedisCache {setting up redis cache}
         // RedisKey RedisLeaderboard = "LeaderboardKey" {setting up leaderboard key}
+        // If actually implementing redis, would remove global model. Data entries would be added straight into entries and sorted within AddEntries.
+        // Subset would be taken out of redis and put into LeaderboardModel page in getLeaderboardModel and returned to controller
 
         public LeaderboardService(IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
@@ -19,14 +21,24 @@ namespace Challenge2.Services
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public Boolean addEntries(List<Entry> e) //from GET, user can input entries into LeaderboardEntries
+        public void addEntries(List<Entry> e) //from GET, user can input entries into LeaderboardEntries
         {
-            for(int i = 0; i < e.Count; i++)
+            //Validating that e inpput is valid. e has to contain data
+            if((e != null) && (e.Count > 0 ))
             {
-                model.LeaderboardEntries.Add(e[i]); 
-                //redis.SortedSetAdd(RedisLeaderboard, e[i], e[i].score); Adding entries into the cache of redis
+                for (int i = 0; i < e.Count; i++)
+                {
+                    model.LeaderboardEntries.Add(e[i]);
+                    //redis.SortedSetAdd(RedisLeaderboard, e[i], e[i].score); Adding entries into the cache of redis
+                }
+                
             }
-            return true;
+            else
+            {
+                //throw bad request if nothing is sent
+                throw new InvalidOperationException("Entry is invalid");
+            }
+            
         }
 
         public LeaderboardModel getLeaderboardModel(int pageNum, int n)  //Takes in two optional querystring parameters
@@ -35,11 +47,17 @@ namespace Challenge2.Services
             {   // if there are no entries, api will add data from a json file that is configurable in appsettings.json
                 string contentRootPath = _hostingEnvironment.ContentRootPath + _config["Datapath"];
                 List<Entry> ent = JsonConvert.DeserializeObject<List<Entry>>(File.ReadAllText(contentRootPath)); //converting data file into a readable list of entries
-                
-                if (!addEntries(ent)) //if the file is unreadable, throw an exception
+               
+                //Validates that data file added above contains valid entries
+                try
+                {
+                    addEntries(ent);
+                }
+                catch (Exception ex)
                 {
                     throw new InvalidOperationException("Data File could not be read");
                 }
+                
             }
             // Checks if current number of entries is compared to n displayed number of entries
             if(model.LeaderboardEntries.Count < n)
