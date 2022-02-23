@@ -42,6 +42,21 @@ Please make sure the data is formatted as such:
 		"username": "Neil",
 		"score": 8635,
 		"index": 4650
+	},
+	{
+		"username": "Serina",
+		"score": 5587,
+		"index": 5459
+	},
+	{
+		"username": "Omar",
+		"score": 5475,
+		"index": 4432
+	},
+	{
+		"username": "Merritt",
+		"score": 7812,
+		"index": 5188
 	}
 ]
 

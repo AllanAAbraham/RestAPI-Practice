@@ -12,7 +12,7 @@ namespace Challenge2.Controllers
         private ILeaderboardService _Leaderboard;
         private readonly IConfiguration _config;    //used to access config setting for n entries
         
-        public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config, IWebHostEnvironment hostingEnvironment)
+        public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config)
         {
             _Leaderboard = Leaderboard;
             _config = config;
