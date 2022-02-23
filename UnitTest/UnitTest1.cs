@@ -45,7 +45,7 @@ namespace TestProject1
 
 
         [TestMethod]
-        public void TestingControllerGETReturnsPage1with1Entry()
+        public void TestingControllerGETReturnsPage1with1Entry() //Validates that controller returns correct http status when running GET method successfully 
         {
             //setting up controller
             var controller = new LeaderboardController(leaderboardService.Object, configuration);
@@ -59,7 +59,7 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void TestingControllerGETReturnsErrorWhenNoMoreEntriesAvailable()
+        public void TestingControllerGETReturnsErrorWhenNoMoreEntriesAvailable() //Validates that controller returns correct error http status when running GET method
         {
             //setting up controller
             var controller = new LeaderboardController(leaderboardService.Object, configuration);
@@ -72,7 +72,7 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void TestingControllerPOST1EntryReturnsOk()
+        public void TestingControllerPOST1EntryReturnsOk() //Validates that controller returns correct http status when running POST method
         {
             //setting up controller
             var controller = new LeaderboardController(leaderboardService.Object, configuration);
@@ -88,7 +88,7 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void TestingControllerPOSTMultipleEntryReturnsOk()
+        public void TestingControllerPOSTMultipleEntryReturnsOk() //Validates that controller returns correct http status when running POST method
         {
             //setting up controller
             var controller = new LeaderboardController(leaderboardService.Object, configuration);
@@ -106,7 +106,7 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void TestingControllerPOSTReturnsErrorWhenNoEntryIsProvided()
+        public void TestingControllerPOSTReturnsErrorWhenNoEntryIsProvided() //Validates that controller returns correct error http status when running POST method
         {
             //setting up controller
             var controller = new LeaderboardController(leaderboardService.Object, configuration);
@@ -114,11 +114,11 @@ namespace TestProject1
             List<Entry> ent = new List<Entry>();
             
             //Running POST
-            IActionResult actionResult = controller.addEntry(ent);
+            IActionResult actionResult = controller.addEntry(null);
 
             //Validating POST returns correct status code
             Assert.IsNotNull(actionResult);
-            Assert.IsInstanceOfType(actionResult, typeof(OkObjectResult));
+            Assert.IsInstanceOfType(actionResult, typeof(BadRequestObjectResult));
         }
     }
 }

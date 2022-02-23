@@ -5,7 +5,7 @@ This project was created using Visual Studio and was tested with Postman
 
 ### To run code:
 1. Pull from master branch in github
-2. Open code in Visual Studio (Make sure to open Challenge2.sln so Nuget can pull in dependencies)
+2. Open code in Visual Studio (Make sure to run Challenge2.sln so Nuget can pull in dependencies)
 3. Run Challenge2
 
 ### Nuget packages
