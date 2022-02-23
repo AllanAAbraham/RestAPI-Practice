@@ -25,9 +25,10 @@ namespace Challenge2.Controllers
             {
                return Ok(_Leaderboard.addEntries(ent)); 
             }
-              catch (Exception)
+            //catch error message and send 400 Bad Request and display error message
+              catch (Exception e)
             {
-                  return BadRequest();
+                  return BadRequest(e.Message);
             }
         }
         
@@ -46,9 +47,10 @@ namespace Challenge2.Controllers
                 }
                 return Ok(_Leaderboard.getLeaderboardModel(pageNum, n)); 
             }
-            catch (Exception)
+            //catch error message and send 400 Bad Request and display error message
+            catch (Exception e)
             {
-                return NotFound();
+                return BadRequest(e.Message);
             }
         }
     }

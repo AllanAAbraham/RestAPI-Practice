@@ -58,6 +58,13 @@ namespace Challenge2.Services
             //The first value (pageNum - 1) * n) calculates the offset of the model file (how many entries are skipped first)
             //The second value [Math.Min(n, model.LeaderboardEntries.Count - ((pageNum - 1) * n))] calculates number of entries to add to page. 
             //Math.Min is used in case if the user is querying for the last page of entries and the remaining total of entries is less than the n query. Page will contain the remaing number of entries.
+            
+            //validating that minimum is not a negative value and throw error message back to controller
+            if(Math.Min(n, model.LeaderboardEntries.Count - ((pageNum - 1) * n)) <= 0)
+            {
+                throw new InvalidOperationException("No more entries to display");
+            }
+            
             page.LeaderboardEntries = model.LeaderboardEntries.GetRange((pageNum - 1) * n, Math.Min(n, model.LeaderboardEntries.Count - ((pageNum - 1) * n)));
             // subset will display total entries in model
             page.count = model.LeaderboardEntries.Count;
