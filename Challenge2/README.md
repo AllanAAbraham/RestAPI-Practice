@@ -8,6 +8,11 @@ This project was created using Visual Studio and was tested with Postman
 2. Open code in Visual Studio (Make sure to open Challenge2.sln so Nuget can pull in dependencies)
 3. Run Challenge2
 
+### Nuget packages
+- Swashbuckle.AspNetCore v6.2.3
+- Newtonsoft.Json v13.0.1
+- Moq v4.16.1
+
 ### Settings:
 There are two configurable settings found in appsettings.json
 
