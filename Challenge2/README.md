@@ -22,7 +22,7 @@ This is the default setting of the number of entries that can be displayed in ea
 
 A user can overwrite this entry with an optional string parameter.
 
-"Datapath": "/TestData/leaderboard2.json"
+"Datapath": "~/TestData/leaderboard2.json"
 
 If the user does not add entries into the API using post, the API will add data entries from the json file listed above.
 

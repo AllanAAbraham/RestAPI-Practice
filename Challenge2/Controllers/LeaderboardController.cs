@@ -9,12 +9,12 @@ namespace Challenge2.Controllers
     public class LeaderboardController : ControllerBase
     {
 
-        private ILeaderboardService _Leaderboard;
+        private ILeaderboardService _leaderboard;
         private readonly IConfiguration _config;    //used to access config setting for n entries
         
-        public LeaderboardController(ILeaderboardService Leaderboard, IConfiguration config)
+        public LeaderboardController(ILeaderboardService leaderboard, IConfiguration config)
         {
-            _Leaderboard = Leaderboard;
+            _leaderboard = leaderboard;
             _config = config;
         }
 
@@ -23,7 +23,7 @@ namespace Challenge2.Controllers
         {
             try
             {
-                _Leaderboard.addEntries(ent);
+                _leaderboard.addEntries(ent);
                return Ok("Entry Added"); 
             }
             //catch error message and send 400 Bad Request and display error message
@@ -46,7 +46,7 @@ namespace Challenge2.Controllers
                 {
                     pageNum = 1;
                 }
-                return Ok(_Leaderboard.getLeaderboardModel(pageNum, n)); 
+                return Ok(_leaderboard.getLeaderboardModel(pageNum, n)); 
             }
             //catch error message and send 400 Bad Request and display error message
             catch (Exception e)
@@ -85,6 +85,7 @@ Goals for 2 / 22 / 2022
 - Start unit testing 
 
 Goals for 2 / 23 / 2022
-- Finish Unit Testing
-- Add more error handling
+- Finish Unit Testing Y
+- Add more error handling Y
+- Review and format code Y
 */
