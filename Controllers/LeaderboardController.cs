@@ -78,6 +78,6 @@ Goals for 2 / 22 / 2022
 - Add comments & fill out readme Y
 - Add functionality to read json file if LeaderboardModel has no entries Y
 - Add setting for data filepath Y
-- Learn redis + add redis comments
+- Learn redis + add redis comments Y
 - Start unit testing 
 */
