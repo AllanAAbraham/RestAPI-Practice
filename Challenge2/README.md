@@ -7,6 +7,9 @@ This project was created using Visual Studio and was tested with Postman
 1. Pull from master branch in github
 2. Open code in Visual Studio (Make sure to run Challenge2.sln so Nuget can pull in dependencies)
 3. Run Challenge2
+4. Use Postman to test the endpoint {https://localhost:7118/api/leaderboard}
+5. Running GET on this endpoint allows user to add entries to the API. In Postman, set Body settings to raw and json. Formatting of entry input can be viewed below.
+6. Running POST on this endpoint will retrieve data within the API and display it as an output within Postman.
 
 ### Nuget packages
 - Swashbuckle.AspNetCore v6.2.3
@@ -24,7 +27,7 @@ A user can overwrite this entry with an optional string parameter.
 
 "Datapath": "~/TestData/leaderboard2.json"
 
-If the user does not add entries into the API using post, the API will add data entries from the json file listed above.
+If the user does not add entries into the API using post, the API will add data entries from the json file listed above. The file listed above contains 100 entries. ""~/TestData/leaderboard.json" contains 50 entries. 
 
 ### Endpoints:
 
