@@ -31,7 +31,7 @@ namespace TestProject1
             //adding dummy entry 
             LeaderboardModel page = new LeaderboardModel();
             Entry entry1 = new Entry("Allan", 1, 1);
-            page.LeaderboardEntries.Add(entry1);
+            page.leaderboardEntries.Add(entry1);
             page.count = 1;
             page.page = 1;
             List<Entry> entries = new List<Entry>();
