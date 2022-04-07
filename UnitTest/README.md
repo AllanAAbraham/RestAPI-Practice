@@ -1,4 +1,4 @@
-# Microsoft Flipgrid Coding Challenge Controller Unit Tests
+# Controller Unit Tests
 ### Allan Abraham
 
 This project was created using Visual Studio
