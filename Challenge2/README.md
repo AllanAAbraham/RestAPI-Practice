@@ -1,4 +1,4 @@
-# Microsoft Flipgrid Coding Challenge
+# Rest Practice
 ### Allan Abraham
 
 This project was created using Visual Studio and was tested with Postman
